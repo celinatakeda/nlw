@@ -31,3 +31,13 @@ window.addEventListener('scroll', function () {
   }
 
 })
+
+/* Testimonials carousel slider swiper */
+const swiper = new Swiper('.swiper-container', {
+  slidesPerview: 1,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  mousewheel: true,
+  keyboard: true  
+});
