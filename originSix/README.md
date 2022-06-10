@@ -1,4 +1,6 @@
 # beautysalon.
 
-##Biblioteca
+##Bibliotecas Úteis
 https://swiperjs.com/
+
+https://scrollrevealjs.org/
