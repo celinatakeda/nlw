@@ -489,6 +489,12 @@ nav.show div.icon-close {
 
 footer .social a {
   margin-right: 2rem;
+  transition: .3s;
+  display: inline-block;
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
 }
 
 /* Back to top */
