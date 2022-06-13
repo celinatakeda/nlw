@@ -41,7 +41,7 @@ const swiper = new Swiper('.swiper', {
   keyboard: true,
   breakpoints: {
     767: {
-      slidesPerview: 2,
+      slidesPerView: 2,
       setWrapperSize: true
     }
   }  
@@ -98,10 +98,8 @@ function activateMenuCurrentSection() {
       document
         .querySelector('nav ul li a[href*=' + sectionId + ']')
         .classList.remove('active');
-
     }
   }
-
 }
 
 /* When Scroll */
