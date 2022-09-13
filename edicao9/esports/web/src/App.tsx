@@ -1,24 +1,11 @@
-// JSX: Javascript + XML(HTML)
-// Componentes / Propriedades
-
-interface ButtonProps {
-  title: string;
-}
-
-function Button(props: ButtonProps) {
-  return (
-    <button>
-      {props.title}
-    </button>
-  )
-}
+import './styles/main.css';
+import logoImg from './assets/logo-nlw-esports.svg'
 
 function App() {
   return (
-    <div>
-      <Button title="Send 1" />
-      <Button title="Send 2" />
-      <Button title="Send 3" />
+    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
+      <img src={logoImg} alt="" />
+      
     </div>
   )
 }
