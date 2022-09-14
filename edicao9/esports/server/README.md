@@ -16,7 +16,7 @@ name
 yearsPlaying
 discord
 weekDays
-hoursStart
+hourStart
 hourEnd
 useVoiceChannel
 createAt
