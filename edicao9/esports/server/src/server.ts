@@ -1,12 +1,24 @@
 //const express = require('express');
 //Usando o module substituindo o de cima
 import express from 'express'
+import cors from 'cors'
+
 import { PrismaClient } from '@prisma/client'
 import { convetHoursStringToMinutes } from './utils/convert-hour-string-to-minutes';
+import { convetMinutesToHourString } from './utils/convert-minutes-to-hour-string';
 
 const app = express()
 
 app.use(express.json());
+app.use(cors()); // deixou aberto 
+
+/* Esse seria o correto em produção
+- Permite apenas esse domínio fazer requisições no backend
+
+app.use(cors({
+  origin: 'http://rocketseat.com.br'
+})); 
+*/
 
 const prisma = new PrismaClient({
   log: ['query']
@@ -77,7 +89,9 @@ app.get('/games/:id/ads', async (request, response) => {
   return response.json(ads.map(ad => {
     return { 
       ...ad,
-      weekDays: ad.weekDays.split(',')
+      weekDays: ad.weekDays.split(','),
+      hoursStart: convetMinutesToHourString(ad.hoursStart),
+      hourEnd: convetMinutesToHourString(ad.hourEnd),
     }
   }))
 })
