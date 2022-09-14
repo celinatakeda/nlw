@@ -52,13 +52,29 @@ app.get('/games/:id/ads', async (request, response) => {
     }
   })
 
-  return response.json([ads])
+  return response.json(ads.map(ad => {
+    return { 
+      ...ad,
+      weekDays: ad.weekDays.split(',')
+    }
+  }))
 })
 
-app.get('/ads/:id/discord', (request, response) => {
-  //const adId = request.params.id;
+app.get('/ads/:id/discord', async (request, response) => {
+  const adId = request.params.id;
 
-  return response.json([])
+  const ad = await prisma.ad.findUniqueOrThrow({
+    select: {
+      discord: true,
+    },
+    where: {
+      id: adId,
+    }
+  })
+
+  return response.json({
+    discord: ad.discord,
+  })
 })
 
 app.listen(3333)
