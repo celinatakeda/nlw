@@ -10,6 +10,7 @@ import { styles } from './styles';
 
 import { GameParams } from '../../@types/navigation';
 
+import { DuoCard } from '../../components/DuoCard';
 import { Heading } from '../../components/Heading';
 import { Background } from '../../components/Background';
 
@@ -53,6 +54,8 @@ export function Game() {
         title={game.title}
         subtitle="Conecte-se e comece a jogar!" 
       />
+
+      <DuoCard />
 
     </SafeAreaView>
     </Background>
