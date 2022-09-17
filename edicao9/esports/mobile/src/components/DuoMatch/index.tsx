@@ -5,6 +5,7 @@ import { CheckCircle } from 'phosphor-react-native';
 
 import { styles } from './styles';
 import { THEME } from '../../theme';
+import { Heading } from '../Heading';
 
 interface Props extends ModalProps {
   discord: string;
@@ -37,9 +38,23 @@ export function DuoMatch({ discord, onClose, ...rest}: Props) {
             weight="bold" 
           />
 
-          <Text style={styles.discord}>
-            {discord}
+          <Heading
+            title="Let's play!"
+            subtitle="Agora é só começar a jogar!" 
+            style={{ alignItems: 'center', marginTop: 24 }}
+          />
+
+          <Text style={styles.label}>
+            Adicione no Discord
           </Text>
+
+          <TouchableOpacity
+            style={styles.discordButton}
+          >
+            <Text style={styles.discord}>
+              {discord}
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </Modal>
