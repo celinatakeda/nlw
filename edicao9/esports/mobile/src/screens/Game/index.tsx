@@ -18,7 +18,7 @@ import { DuoMatch } from '../../components/DuoMatch';
 
 export function Game() {
   const [duos, setDuos] = useState<DuoCardProps[]>([]);
-  const[discordDuoSelected, setDiscordDuoSelected] = useState('kanami');
+  const[discordDuoSelected, setDiscordDuoSelected] = useState('');
 
   const navigation = useNavigation();
   const route = useRoute();
