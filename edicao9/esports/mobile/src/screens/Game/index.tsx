@@ -14,9 +14,11 @@ import { GameParams } from '../../@types/navigation';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 import { Heading } from '../../components/Heading';
 import { Background } from '../../components/Background';
+import { DuoMatch } from '../../components/DuoMatch';
 
 export function Game() {
   const [duos, setDuos] = useState<DuoCardProps[]>([]);
+  const[discordDuoSelected, setDiscordDuoSelected] = useState('kanami');
 
   const navigation = useNavigation();
   const route = useRoute();
@@ -83,6 +85,11 @@ export function Game() {
         )} 
       />
 
+      <DuoMatch
+        visible={discordDuoSelected.length > 0}
+        discord="Kanami#meow"
+        onClose={() => setDiscordDuoSelected('')}
+      />
     </SafeAreaView>
     </Background>
   );
