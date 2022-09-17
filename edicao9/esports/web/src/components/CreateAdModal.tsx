@@ -6,6 +6,7 @@ import * as Checkbox from '@radix-ui/react-checkbox';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
 
 import { Input } from './Form/Input';
+import axios from 'axios';
 
 interface Game {
   id: string;
@@ -20,24 +21,39 @@ export function CreateAdModal() {
   console.log(weekDays)
 
   useEffect(() => {
-    fetch('http://localhost:3333/games')
-      .then((response) => response.json())
-      .then (data => {
-        setGames(data)
+    axios('http://localhost:3333/games')      
+      .then (response => {
+        setGames(response.data)
       })
   }, [])
 
-  function handleCreateAd(event: FormEvent) {
+  async function handleCreateAd(event: FormEvent) {
     event.preventDefault();
 
     const formData = new FormData(event.target as HTMLFormElement);
-
     const data = Object.fromEntries(formData)
 
-    console.log(data)
-    console.log(weekDays)
-    console.log(useVoiceChannel)
+    // Validação
 
+    if (!data.name) {
+      return;
+    }
+
+    try {
+      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+        name: data.name,
+        yearsPlaying: Number(data.yearsPlaying),
+        discord: data.discord,
+        weekDays: weekDays.map(Number),
+        hoursStart: data.hoursStart,
+        hourEnd: data.hourEnd,
+        useVoiceChannel: useVoiceChannel
+      })
+      alert('Anúncio criado com sucesso!')
+    } catch (err) {
+      console.log(err);
+      alert('Erro ao criar o anúncio!')
+    }
   }
 
   return (
@@ -144,9 +160,9 @@ export function CreateAdModal() {
                 
               </div>
               <div className="flex flex-col gap-2 flex-1">
-                <label htmlFor="hourStart">Qual horário do dia?</label>
+                <label htmlFor="hoursStart">Qual horário do dia?</label>
                 <div className="grid grid-cols-2 gap-2">
-                  <Input name="hourStart" id="hourStart" type="time" placeholder="De" />
+                  <Input name="hoursStart" id="hoursStart" type="time" placeholder="De" />
                   <Input name="hourEnd" id="hourEnd" type="time" placeholder="Até" />
                 </div>
               </div>
