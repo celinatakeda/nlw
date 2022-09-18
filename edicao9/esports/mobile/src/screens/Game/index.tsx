@@ -93,7 +93,7 @@ export function Game() {
 
       <DuoMatch
         visible={discordDuoSelected.length > 0}
-        discord="Kanami#meow"
+        discord={discordDuoSelected}
         onClose={() => setDiscordDuoSelected('')}
       />
     </SafeAreaView>
