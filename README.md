@@ -1,4 +1,4 @@
-## Desenvolvendo aplicações web do zero.
+## Desenvolvendo aplicações do zero.
 
 
 
