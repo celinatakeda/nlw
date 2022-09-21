@@ -1,4 +1,4 @@
-# eSports
+# NLW eSports
 Desenvolvendo um projeto do uviverso de games.
 
 ## Tecnologias Utilizadas
