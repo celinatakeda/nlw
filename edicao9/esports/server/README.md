@@ -3,12 +3,12 @@
 ## Entidades
 
 ### Game
+```
 id
-
 title
-
 bannerUrl
 
+```
 ### Ad
 id
 
