@@ -4,7 +4,9 @@
 
 ### Game
 id
+
 title
+
 bannerUrl
 
 ### Ad
