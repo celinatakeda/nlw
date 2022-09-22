@@ -3,7 +3,7 @@ Desenvolvendo um projeto do uviverso de games.
 
 ## Tecnologias Utilizadas
 ```
-Vitte
+Vite
 ReactJS
 Tailwindcss
 Phosphor icons
