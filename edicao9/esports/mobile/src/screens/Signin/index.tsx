@@ -10,7 +10,6 @@ import logImg from '../../assets/logo-nlw-esports.png';
 import { Background } from '../../components/Background';
 import { Heading } from '../../components/Heading';
 
-
 export function SignIn() {
  
   async function handleDiscordSignIn() {
