@@ -14,10 +14,20 @@ import { Heading } from '../../components/Heading';
 export function SignIn() {
  
   async function handleDiscordSignIn() {
-    AuthSession.startAsync({
-      authUrl: ""
-    })
 
+    const response = await AuthSession.startAsync({
+      authUrl: "https://discord.com/api/oauth2/authorize?client_id=1022840561213915157&redirect_uri=https%3A%2F%2Fauth.expo.io%2F%40takeda%2Fmobile&response_type=token&scope=identify"
+    });
+
+    fetch('https://discord.com/api/users/@me', {
+      headers: {
+        'authorization': `Bearer ${response.params.access_token}`
+      }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+    console.log(response)
   }
   
   return (
