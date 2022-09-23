@@ -44,7 +44,7 @@ export function SignIn() {
         style={styles.button}
         onPress={handleDiscordSignIn}        
       >
-
+        
        <GameController
         color={THEME.COLORS.TEXT}
         size={20}        
