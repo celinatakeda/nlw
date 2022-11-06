@@ -1,5 +1,6 @@
+import { Share } from 'react-native';
 import { useCallback, useState } from 'react';
-import { VStack, Icon, useToast, FlatList } from "native-base";
+import { VStack, Icon, useToast, FlatList, Code } from "native-base";
 import {Octicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -11,7 +12,7 @@ import { Header } from "../components/Header";
 import { Loading } from '../components/Loading';
 import { EmptyPoolList } from '../components/EmptyPoolList';
 import { PoolCard, PoolCardProps } from "../components/PoolCard";
-import { EmptyMyPoolList } from '../components/EmptyMyPoolList';
+
 
 export function Pools() {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,13 +41,19 @@ export function Pools() {
     }
   }
 
+  async function handleCodeShare() {
+    await Share.share({
+      message: 'Share'
+    });
+  }
+
   useFocusEffect(useCallback(() => {
     fetchPools();
   }, []));
 
   return (
     <VStack flex={1} bgColor="gray.900">
-      <Header title="Meus bolões"  />
+      <Header title="Meus bolões"  onShare={handleCodeShare} />
 
       <VStack mt={6} mx={5} borderBottomWidth={1} borderBottomColor="gray.600" pb={4} mb={4}>
         <Button 
