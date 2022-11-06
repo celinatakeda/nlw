@@ -1,4 +1,3 @@
-import { Share } from 'react-native';
 import { useCallback, useState } from 'react';
 import { VStack, Icon, useToast, FlatList, Code } from "native-base";
 import {Octicons} from "@expo/vector-icons";
@@ -41,19 +40,13 @@ export function Pools() {
     }
   }
 
-  async function handleCodeShare() {
-    await Share.share({
-      message: 'Share'
-    });
-  }
-
   useFocusEffect(useCallback(() => {
     fetchPools();
   }, []));
 
   return (
     <VStack flex={1} bgColor="gray.900">
-      <Header title="Meus bolões"  onShare={handleCodeShare} />
+      <Header title="Meus bolões" />
 
       <VStack mt={6} mx={5} borderBottomWidth={1} borderBottomColor="gray.600" pb={4} mb={4}>
         <Button 
