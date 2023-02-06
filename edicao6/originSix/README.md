@@ -1,6 +1,7 @@
 # beautysalon.
-
-![beautySalon](https://user-images.githubusercontent.com/82118386/173386708-9ba62aed-2c84-4eab-bfcc-fa5fe9c18f66.png)
+<p>
+  <img src=".github/beautySalon.png">
+</p>
 
 ## Bibliotecas Úteis
 https://swiperjs.com/
