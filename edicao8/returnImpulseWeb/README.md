@@ -2,7 +2,7 @@
 
 Com apresentação do protótipo Feedback Widget no figma, desenvolvemos uma aplicação do zero.
 
-<p>
+<p alidn="center">
 	<img src=".github/feedbackWidget.png">
 </p>
 
