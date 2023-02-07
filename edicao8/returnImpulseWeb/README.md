@@ -2,7 +2,9 @@
 
 Com apresentação do protótipo Feedback Widget no figma, desenvolvemos uma aplicação do zero.
 
-![imgFeedback](https://user-images.githubusercontent.com/82118386/167209545-5295eeae-140c-41d4-85d1-1914523c5dcc.png)
+<p>
+	<img src=".github/feedbackWidget.png">
+</p>
 
 
 ## Tecnologias utilizadas
