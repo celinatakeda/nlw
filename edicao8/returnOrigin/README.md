@@ -1,6 +1,8 @@
 # doctorCare
 
-![doctorCare](https://user-images.githubusercontent.com/82118386/172010340-9bb852c9-5510-4a5b-9b44-01488a6b217a.png)
+<p>
+  <img src=".github/doctorCare.png">
+</p>
 
 
 ## HTML
