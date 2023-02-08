@@ -3,13 +3,13 @@ Desenvolvendo um projeto do uviverso de games.
 
 ## Tecnologias Utilizadas
 ```
-Vite
-ReactJS
-Tailwindcss
-Phosphor icons
-Axios
-Radix 
-Prisma
+  Vite
+  ReactJS
+  Tailwindcss
+  Phosphor icons
+  Axios
+  Radix 
+  Prisma
 
 ```
 
