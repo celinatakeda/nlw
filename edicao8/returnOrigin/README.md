@@ -1,4 +1,4 @@
-# doctorCare
+# DoctorCare
 
 <p>
   <img src=".github/doctorCare.png">

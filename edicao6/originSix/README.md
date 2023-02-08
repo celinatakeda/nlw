@@ -1,4 +1,5 @@
 # beautysalon.
+
 <p>
   <img src=".github/beautySalon.png">
 </p>
